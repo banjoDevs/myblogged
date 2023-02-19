@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="bg-gradient-to-b from-gray-200 to-gray-300">
+    <div class="bg-gradient-to-b from-blue-200 to-gray-300">
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-center text-3xl font-bold my-4">All Posts</h1>
     <div class="flex flex-wrap justify-center -mx-4">
