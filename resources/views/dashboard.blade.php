@@ -15,13 +15,14 @@
         </div>
     </div>
 
-    <div class="container mx-auto">
-        <h1 class="text-center text-3xl font-bold my-4">All Posts</h1>
-      <div class="flex flex-wrap justify-center">
+    <div class="bg-gradient-to-b from-gray-200 to-gray-300">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-center text-3xl font-bold my-4">All Posts</h1>
+    <div class="flex flex-wrap justify-center -mx-4">
       @foreach ($posts as $post)
         <div class="w-full sm:w-1/2 md:w-1/3 p-4">
           <div class="max-w-sm rounded overflow-hidden shadow-lg">
-              <img class="w-full rounded" src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}"> 
+            <div class="h-48 bg-cover bg-center" style="background-image: url('{{ $post['featured_image'] }}')"></div>
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">{{ $post['title'] }}</div>
               <p class="text-gray-700 text-base">{{ $post['content'] }}</p>
@@ -29,8 +30,10 @@
           </div>
         </div>
       @endforeach
+    </div>
   </div>
 </div>
+
 
 
 
