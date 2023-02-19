@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 //use App\Http\Controllers\PostedController;
 //use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = Post::all();
+    return view('welcome', ['posts' => $posts]);
 });
 
 Route::get('/dashboard', function () {
