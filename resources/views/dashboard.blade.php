@@ -14,4 +14,15 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+                    <h1>All Posts</h1>
+                <div class="row">
+                @foreach ($posts as $post)
+                <div class="col-md-4">
+                    <h3>{{$post['title']}}</h3>
+                    <img src="{{$post['featured_image']}}" alt="{{$post['title']}}">
+                    {{$post['content']}}
+                </div>
+                @endforeach
 </x-app-layout>

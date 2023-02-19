@@ -16,17 +16,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="container">   
-                <div class="container">
-                    <h1>All Posts</h1>
-                <div class="row">
-                @foreach ($posts as $post)
-                <div class="col-md-4">
-                    <h3>{{$post['title']}}</h3>
-                    <img src="{{$post['featured_image']}}" alt="{{$post['title']}}">
-                    {{$post['content']}}
-                </div>
-                @endforeach
+    <div class="container">                 
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">

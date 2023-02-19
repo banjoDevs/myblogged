@@ -19,12 +19,13 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $posts = Post::all();
-    return view('welcome', ['posts' => $posts]);
+    
+    return view('welcome', );
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $posts = Post::all();
+    return view('dashboard', ['posts' => $posts]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

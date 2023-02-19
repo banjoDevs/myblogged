@@ -18,9 +18,6 @@
                     <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
                         {{'Posts' }}
                     </x-nav-link>
-                    <x-nav-link :href="route('images.index')" :active="request()->routeIs('images.index')">
-                        {{'Posted' }}
-                    </x-nav-link>
                 </div>
             </div>
 
