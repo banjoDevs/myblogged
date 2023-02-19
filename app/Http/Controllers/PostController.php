@@ -22,12 +22,6 @@ class PostController extends Controller
         return response()->view('posts.index', [
             'posts' => Post::orderBy('updated_at', 'desc')->get(),
         ]);
-
-/* Fetch posts to view in dashboard */
-        $posts = Post::latest()->get();
-
-        return view('home', compact('posts'));
-
     }
 
     /**
@@ -68,7 +62,6 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-
     public function show(string $id): Response
     {
         return response()->view('posts.show', [
