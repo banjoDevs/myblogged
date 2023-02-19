@@ -15,14 +15,22 @@
         </div>
     </div>
 
-    <div class="container">
-                    <h1>All Posts</h1>
-                <div class="row">
-                @foreach ($posts as $post)
-                <div class="col-md-4">
-                    <h3>{{$post['title']}}</h3>
-                    <img src="{{$post['featured_image']}}" alt="{{$post['title']}}">
-                    {{$post['content']}}
-                </div>
-                @endforeach
+    <div class="container mx-auto">
+        <h1 class="text-center text-3xl font-bold my-4">All Posts</h1>
+    <div class="flex flex-wrap justify-center">
+    @foreach ($posts as $post)
+      <div class="w-full sm:w-1/2 md:w-1/3 p-4">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+          <img class="w-full" src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ $post['title'] }}</div>
+            <p class="text-gray-700 text-base">{{ $post['content'] }}</p>
+          </div>
+        </div>
+      </div>
+    @endforeach
+  </div>
+</div>
+
+
 </x-app-layout>
