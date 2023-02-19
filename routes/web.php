@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\PostedController;
+//use App\Http\Controllers\PostedController;
+//use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('posts', PostController::class);
     // Route::get('posts/posted', [PostedController::class, 'posts'])->name('posted');
     // Route::get('/', [PostController::class, 'index'])->name('home');
+    Route::get('/images', [ImageController::class, 'index'])->name('images.index');
+
 });
 
 require __DIR__.'/auth.php';
