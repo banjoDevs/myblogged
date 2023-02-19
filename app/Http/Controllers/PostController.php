@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Requests\Post\StoreRequest;
+use App\Http\Requests\Post\UpdateRequest;
 
 class PostController extends Controller
 {
@@ -13,7 +15,14 @@ class PostController extends Controller
      */
     public function index(): Response
     {
-        //
+        return response()->view('posts.index', [
+            'posts' => Post::orderBy('updated_at', 'desc')->get(),
+        ]);
+
+/* Fetch posts to view in dashboard */
+        $posts = Post::latest()->get();
+
+        return view('home', compact('posts'));
     }
 
     /**
@@ -21,7 +30,7 @@ class PostController extends Controller
      */
     public function create(): Response
     {
-        //
+        return response()->view('posts.form');
     }
 
     /**
