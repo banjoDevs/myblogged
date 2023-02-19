@@ -16,7 +16,7 @@ class LoginRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -26,7 +26,10 @@ class LoginRequest extends FormRequest
      */
     public function rules(): array
     {
-        //
+        return [
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'string'],
+        ];
     }
 
     /**
@@ -46,8 +49,18 @@ class LoginRequest extends FormRequest
      */
     public function ensureIsNotRateLimited(): void
     {
-        //
+        $this->ensureIsNotRateLimited();
+
+        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+            RateLimiter::hit($this->throttleKey());
+
+            throw ValidationException::withMessages([
+                'email' => trans('auth.failed'),
+            ]);
     }
+    RateLimiter::clear($this->throttleKey());
+
+}
 
     /**
      * Get the rate limiting throttle key for the request.
