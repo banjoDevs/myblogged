@@ -21,7 +21,7 @@
       @foreach ($posts as $post)
         <div class="w-full sm:w-1/2 md:w-1/3 p-4">
           <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full rounded" src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}">
+              <img class="w-full rounded" src="{{ $post['featured_image'] }}" alt="{{ $post['title'] }}"> 
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">{{ $post['title'] }}</div>
               <p class="text-gray-700 text-base">{{ $post['content'] }}</p>
