@@ -24,7 +24,7 @@ class StoreRequest extends FormRequest
         return [
             'title' => 'required|string|min:3|max:250',
             'content' => 'required|string|min:3|max:6000',
-            'featured_image' => 'required|image|max:100000|mimes:jpg,jpeg,png',
+            'featured_image' => 'required|image|max:10000|mimes:jpg,jpeg,png',
         ];
     }
 }
